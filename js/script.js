@@ -93,22 +93,16 @@ const app = new Vue({
     methods: {
 
         funzioneInviaMessaggio() {
-
             if (this.nuovoMessaggio.trim() != '') {
-
                 this.arrayMessaggiChat.push({
                     testo: this.nuovoMessaggio,
-                    ora: '12.00',
+                    ora: new Date().getHours() + '.' + new Date().getMinutes(),
                     seiIlMittente: true,
                 });
-
                 this.nuovoMessaggio = '';
             }
-
-
-        }
+        },
 
     },
-
 
 });
