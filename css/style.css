@@ -1,0 +1,151 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.verde {
+    height: 15vh;
+    background-color: green;
+}
+
+.gray {
+    height: 85vh;
+    background-color: lightgray;
+}
+
+.container {
+    position: absolute;
+    top: 35px;
+    left: 144px;
+    width: 1300px;
+    height: 650px;
+    background-color: white;
+    display: flex;
+}
+
+.sinistra {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+}
+
+.destra {
+    width: 65%;
+    background-color: blue;
+}
+
+.avatar {
+    width: 45px;
+}
+
+.img-avatar {
+    width: 100%;
+    border-radius: 50%;
+}
+
+
+
+
+
+/* BARRA PROFILO  */
+.profilo {
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: hsl(0deg 0% 92%);
+}
+
+.profilo-left {
+    display: flex;
+    align-items: center;
+}
+
+.profilo-right {
+    color: gray;
+    font-size: 1.2rem;
+}
+
+.fa-circle-notch,
+.fa-message,
+.fa-ellipsis-vertical {
+    margin-right: 10px;
+}
+
+
+
+/* BARRA NOTIFICHE  */
+.notifiche {
+    padding: 15px 10px;
+    display: flex;
+    align-items: center;
+    background-color: hsl(199deg 95% 77%);
+}
+
+.bell {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+    color: hsl(199deg 95% 77%);
+}
+
+.link-css {
+    color: gray;
+    font-size: 0.9rem;
+}
+
+
+
+
+/* BARRA RICERCA CHAT */
+.ricerca {
+    padding: 5px;
+    background-color: hsl(0deg 0% 92%);
+}
+
+.btn-lente {
+    padding: 7px 20px;
+    margin-right: -5px;
+    color: gray;
+    background-color: white;
+    border: none;
+}
+
+#input-ricerca {
+    padding: 7px;
+    width: 87%;
+    border: none;
+}
+
+
+
+
+
+/* LISTA CHAT  */
+.lista-chat {
+    list-style: none;
+}
+
+.lista-chat li {
+    display: flex;
+    padding: 10px 5px;
+}
+
+.avatar-li {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.nome {
+    margin-right: 155px;
+}
+
+.active-chat {
+    background-color: lightgray;
+}
