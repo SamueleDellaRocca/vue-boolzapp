@@ -11,7 +11,7 @@ const app = new Vue({
             {
                 nome: 'Michele',
                 avatar: 'avatar_1.jpg',
-                messaggio: 'ciao sei un grande',
+                messaggio: 'ciao sei un grande!',
                 ora: '13.12',
             },
 
