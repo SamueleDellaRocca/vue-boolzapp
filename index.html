@@ -19,7 +19,7 @@
     <div class="verde"></div>
     <div class="gray"></div>
 
-    <div class="container">
+    <div id="container">
 
         <!-- PARTE SINISTRA, CON LISTA CONTATTI  -->
         <div class="sinistra">
@@ -70,110 +70,24 @@
 
             <!-- LISTA CHAT  -->
             <ul class="lista-chat">
-                <li class="active-chat">
-                    <div class="avatar-li">
-                        <img class="img-avatar" src="img/avatar_io.jpg" alt="avatae io">
+                <li v-for="(contatto, index) in arrayContatti" class="active-chat">
+                    <div class="div-flex">
+                        <div class="avatar-li">
+                            <img class="img-avatar" :src="'img/'+contatto.avatar" alt="avatae io">
+                        </div>
+
+
+                        <div class="nome">
+                            <h3>{{ contatto.nome }}</h3>
+                            <div>{{ contatto.messaggio }}</div>
+                        </div>
                     </div>
 
 
-                    <div class="nome">
-                        <h3>Michele</h3>
-                        <div>Ultimo messaggio Inviato</div>
-                    </div>
-
-
-                    <div class="ora">12.00</div>
+                    <div class="ora">{{ contatto.ora }}</div>
                 </li>
 
-                <li class="active-chat">
-                    <div class="avatar-li">
-                        <img class="img-avatar" src="img/avatar_io.jpg" alt="avatae io">
-                    </div>
 
-
-                    <div class="nome">
-                        <h3>Michele</h3>
-                        <div>Ultimo messaggio Inviato</div>
-                    </div>
-
-
-                    <div class="ora">12.00</div>
-                </li>
-
-                <li class="active-chat">
-                    <div class="avatar-li">
-                        <img class="img-avatar" src="img/avatar_io.jpg" alt="avatae io">
-                    </div>
-
-
-                    <div class="nome">
-                        <h3>Michele</h3>
-                        <div>Ultimo messaggio Inviato</div>
-                    </div>
-
-
-                    <div class="ora">12.00</div>
-                </li>
-
-                <li class="active-chat">
-                    <div class="avatar-li">
-                        <img class="img-avatar" src="img/avatar_io.jpg" alt="avatae io">
-                    </div>
-
-
-                    <div class="nome">
-                        <h3>Michele</h3>
-                        <div>Ultimo messaggio Inviato</div>
-                    </div>
-
-
-                    <div class="ora">12.00</div>
-                </li>
-
-                <li class="active-chat">
-                    <div class="avatar-li">
-                        <img class="img-avatar" src="img/avatar_io.jpg" alt="avatae io">
-                    </div>
-
-
-                    <div class="nome">
-                        <h3>Michele</h3>
-                        <div>Ultimo messaggio Inviato</div>
-                    </div>
-
-
-                    <div class="ora">12.00</div>
-                </li>
-
-                <li class="active-chat">
-                    <div class="avatar-li">
-                        <img class="img-avatar" src="img/avatar_io.jpg" alt="avatae io">
-                    </div>
-
-
-                    <div class="nome">
-                        <h3>Michele</h3>
-                        <div>Ultimo messaggio Inviato</div>
-                    </div>
-
-
-                    <div class="ora">12.00</div>
-                </li>
-
-                <li class="active-chat">
-                    <div class="avatar-li">
-                        <img class="img-avatar" src="img/avatar_io.jpg" alt="avatae io">
-                    </div>
-
-
-                    <div class="nome">
-                        <h3>Michele</h3>
-                        <div>Ultimo messaggio Inviato</div>
-                    </div>
-
-
-                    <div class="ora">12.00</div>
-                </li>
             </ul>
         </div>
         <!-- FINE PARTE SINISTRA  -->

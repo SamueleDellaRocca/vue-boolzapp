@@ -14,7 +14,7 @@
     background-color: lightgray;
 }
 
-.container {
+#container {
     position: absolute;
     top: 35px;
     left: 144px;
@@ -144,12 +144,16 @@
     display: flex;
     padding: 10px 5px;
     border-bottom: 1px solid lightgrey;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .avatar-li {
     width: 50px;
     margin-right: 10px;
+}
+
+.div-flex {
+    display: flex;
 }
 
 .nome {
