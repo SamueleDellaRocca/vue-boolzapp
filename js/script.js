@@ -37,7 +37,7 @@ const app = new Vue({
             },
 
             {
-                nome: 'Alesandro L.',
+                nome: 'Alessandro L.',
                 avatar: 'avatar_5.jpg',
                 messaggio: 'scrivi codice',
                 ora: '13.12',
