@@ -129,23 +129,12 @@
             <div class="corpo-chat">
 
                 <ul class="chat-list chat-destra">
-                    <li class="mex-inviato">
+                    <li v-for="(messaggio,index) in arrayMessaggiChat"
+                        :class="(messaggio.seiIlMittente == true) ? 'mex-inviato' : 'mex-ricevuto'">
                         <div class="mex">
-                            Hai portato a spasso il cane?
+                            {{ messaggio.testo }}
                         </div>
-                        <div class="ora-mex">15.30</div>
-                    </li>
-                    <li class="mex-inviato">
-                        <div class="mex">
-                            Ricordati di stendere i panni
-                        </div>
-                        <div class="ora-mex">15.50</div>
-                    </li>
-                    <li class="mex-ricevuto">
-                        <div class="mex">
-                            Tutto fatto!
-                        </div>
-                        <div class="ora-mex">16.15</div>
+                        <div class="ora-mex">{{ messaggio.ora }}</div>
                     </li>
                 </ul>
 
@@ -157,7 +146,8 @@
                     <i class="fa-regular fa-face-smile"></i>
                 </button>
 
-                <input type="text" name="messaggio" id="messaggio" placeholder="Scrivi un messaggio">
+                <input v-on:keyup.enter="funzioneInviaMessaggio" v-model="nuovoMessaggio" type="text" name="messaggio"
+                    id="messaggio" placeholder="Scrivi un messaggio">
 
                 <button class="btn-chat">
                     <i class="fa-solid fa-microphone"></i>
