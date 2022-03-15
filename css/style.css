@@ -30,8 +30,10 @@
     background-color: white;
     display: flex;
     overflow: hidden;
-    margin: auto;
-    margin-top: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .sinistra {
