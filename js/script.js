@@ -100,12 +100,13 @@ const app = new Vue({
                     seiIlMittente: true,
                 });
                 this.nuovoMessaggio = '';
-                setTimeout(this.funzioneRisposta, 1000);
             }
+            setTimeout(this.funzioneRisposta, 1000);
         },
 
         funzioneRisposta() {
             let ora = new Date().getHours() + '.' + new Date().getMinutes();
+
             const listaChat = document.querySelector('.chat-list');
             let risposta = document.createElement('li');
             risposta.classList.add('mex-ricevuto');
