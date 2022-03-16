@@ -4,6 +4,8 @@ const app = new Vue({
 
     data: {
 
+        oraAttuale: new Date().getHours() + '.' + new Date().getMinutes(),
+
         ricerca: '',
         arrayRicercati: [],
 
@@ -233,7 +235,7 @@ const app = new Vue({
         funzioneRicerca() {
             this.arrayRicercati = [];
             for (const index in this.arrayContatti) {
-                if (this.arrayContatti[index].nome.includes(this.ricerca)) {
+                if (this.arrayContatti[index].nome.toLowerCase().includes(this.ricerca.toLowerCase())) {
                     this.arrayRicercati.push(this.arrayContatti[index]);
                 };
             };
