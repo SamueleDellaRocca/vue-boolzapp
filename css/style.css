@@ -201,7 +201,9 @@ html {
     background-color: red;
 }
 
-
+.lista-chat li:hover {
+    background-color: red;
+}
 
 
 
