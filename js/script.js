@@ -51,7 +51,7 @@ const app = new Vue({
                     },
                     {
                         testo: 'sto scrivendo codice, mi fuma il cervello!',
-                        ora: '16.15',
+                        ora: '17.15',
                         seiIlMittente: false,
                     },
                 ],
@@ -75,7 +75,7 @@ const app = new Vue({
                     },
                     {
                         testo: 'sempre!',
-                        ora: '16.15',
+                        ora: '16.30',
                         seiIlMittente: false,
                     },
                 ],
@@ -99,7 +99,7 @@ const app = new Vue({
                     },
                     {
                         testo: 'Tutto fatto!',
-                        ora: '16.15',
+                        ora: '21.25',
                         seiIlMittente: false,
                     },
                 ],
@@ -123,7 +123,7 @@ const app = new Vue({
                     },
                     {
                         testo: 'sono un mostro!',
-                        ora: '16.15',
+                        ora: '16.40',
                         seiIlMittente: false,
                     },
                 ],
@@ -147,7 +147,7 @@ const app = new Vue({
                     },
                     {
                         testo: 'anche tu!',
-                        ora: '16.15',
+                        ora: '18.15',
                         seiIlMittente: false,
                     },
                 ],
@@ -171,7 +171,7 @@ const app = new Vue({
                     },
                     {
                         testo: 'daje!',
-                        ora: '16.15',
+                        ora: '19.20',
                         seiIlMittente: false,
                     },
                 ],
@@ -195,7 +195,7 @@ const app = new Vue({
                     },
                     {
                         testo: 'forza e coraggio',
-                        ora: '16.15',
+                        ora: '20.12',
                         seiIlMittente: false,
                     },
                 ],
