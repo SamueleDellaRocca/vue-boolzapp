@@ -12,7 +12,6 @@ const app = new Vue({
             {
                 nome: 'Michele',
                 avatar: 'avatar_1.jpg',
-                messaggio: 'ciao sei un grande!',
                 ora: '13.12',
                 arrayMessaggiChat: [
                     {
@@ -36,7 +35,6 @@ const app = new Vue({
             {
                 nome: 'Fabio',
                 avatar: 'avatar_2.jpg',
-                messaggio: 'ci vediamo domani',
                 ora: '13.12',
                 arrayMessaggiChat: [
                     {
@@ -60,7 +58,6 @@ const app = new Vue({
             {
                 nome: 'Samuele',
                 avatar: 'avatar_3.jpg',
-                messaggio: 'sbrigati a venire',
                 ora: '13.12',
                 arrayMessaggiChat: [
                     {
@@ -84,7 +81,6 @@ const app = new Vue({
             {
                 nome: 'Alessandro B.',
                 avatar: 'avatar_4.jpg',
-                messaggio: 'mettiti a studiare',
                 ora: '13.12',
                 arrayMessaggiChat: [
                     {
@@ -108,7 +104,6 @@ const app = new Vue({
             {
                 nome: 'Alessandro L.',
                 avatar: 'avatar_5.jpg',
-                messaggio: 'scrivi codice',
                 ora: '13.12',
                 arrayMessaggiChat: [
                     {
@@ -132,7 +127,6 @@ const app = new Vue({
             {
                 nome: 'Claudia',
                 avatar: 'avatar_6.jpg',
-                messaggio: 'ti voglio bene',
                 ora: '13.12',
                 arrayMessaggiChat: [
                     {
@@ -156,7 +150,6 @@ const app = new Vue({
             {
                 nome: 'Federico',
                 avatar: 'avatar_7.jpg',
-                messaggio: 'forza roma',
                 ora: '13.12',
                 arrayMessaggiChat: [
                     {
@@ -180,7 +173,6 @@ const app = new Vue({
             {
                 nome: 'Davide',
                 avatar: 'avatar_8.jpg',
-                messaggio: 'sempre forza roma',
                 ora: '13.12',
                 arrayMessaggiChat: [
                     {
