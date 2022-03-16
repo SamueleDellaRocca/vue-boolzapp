@@ -142,7 +142,7 @@ html {
 
 #input-ricerca {
     padding: 7px;
-    width: 87%;
+    width: calc(100% - 55px);
     border: none;
 }
 

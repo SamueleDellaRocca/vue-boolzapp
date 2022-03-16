@@ -68,12 +68,13 @@
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
 
-                    <input type="text" name="ricerca" id="input-ricerca" placeholder="Cerca o inizia una nuova chat">
+                    <input v-on:keyup.enter="funzioneRicerca" v-model="ricerca" type="text" name="ricerca"
+                        id="input-ricerca" placeholder="Cerca o inizia una nuova chat">
                 </div>
             </div>
 
             <!-- LISTA CHAT  -->
-            <ul class="lista-chat">
+            <ul v-if="ricerca == ''" class="lista-chat">
                 <li @click="funzioneChatAttiva(index)" v-for="(contatto, index) in arrayContatti"
                     :class="(index == chatAttiva) ? 'active-chat' : '' ">
                     <div class="div-flex">
@@ -91,9 +92,29 @@
 
                     <div class="ora">{{ contatto.arrayMessaggiChat[contatto.arrayMessaggiChat.length - 1].ora }}</div>
                 </li>
-
-
             </ul>
+
+            <ul v-else class="lista-chat">
+                <li @click="funzioneChatAttiva(index)" v-for="(contatto, index) in arrayRicercati"
+                    :class="(index == chatAttiva) ? 'active-chat' : '' ">
+                    <div class="div-flex">
+                        <div class="avatar-li">
+                            <img class="img-avatar" :src="'img/'+contatto.avatar" alt="avatae io">
+                        </div>
+
+
+                        <div class="nome">
+                            <h3>{{ contatto.nome }}</h3>
+                            <div>{{ contatto.arrayMessaggiChat[contatto.arrayMessaggiChat.length - 1].testo }}</div>
+                        </div>
+                    </div>
+
+
+                    <div class="ora">{{ contatto.arrayMessaggiChat[contatto.arrayMessaggiChat.length - 1].ora }}</div>
+                </li>
+            </ul>
+
+
         </div>
         <!-- FINE PARTE SINISTRA  -->
 

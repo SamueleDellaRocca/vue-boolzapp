@@ -4,6 +4,9 @@ const app = new Vue({
 
     data: {
 
+        ricerca: '',
+        arrayRicercati: [],
+
         nuovoMessaggio: '',
         chatAttiva: 0,
 
@@ -225,6 +228,16 @@ const app = new Vue({
 
         funzioneChatAttiva(index) {
             this.chatAttiva = index;
+        },
+
+        funzioneRicerca() {
+            this.arrayRicercati = [];
+            for (const index in this.arrayContatti) {
+                if (this.arrayContatti[index].nome.includes(this.ricerca)) {
+                    this.arrayRicercati.push(this.arrayContatti[index]);
+                };
+            };
+            console.log(this.arrayRicercati);
         }
 
     },
