@@ -74,7 +74,8 @@
 
             <!-- LISTA CHAT  -->
             <ul class="lista-chat">
-                <li @click="funzioneChatAttiva(index)" v-for="(contatto, index) in arrayContatti" class="active-chat">
+                <li @click="funzioneChatAttiva(index)" v-for="(contatto, index) in arrayContatti"
+                    :class="(index == chatAttiva) ? 'active-chat' : '' ">
                     <div class="div-flex">
                         <div class="avatar-li">
                             <img class="img-avatar" :src="'img/'+contatto.avatar" alt="avatae io">

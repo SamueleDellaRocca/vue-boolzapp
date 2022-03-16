@@ -198,7 +198,7 @@ html {
 }
 
 .active-chat {
-    background-color: hsl(180deg 5% 92%);
+    background-color: red;
 }
 
 
