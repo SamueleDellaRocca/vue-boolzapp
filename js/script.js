@@ -3,7 +3,6 @@ const app = new Vue({
     el: '#container',
 
     data: {
-        visibile: false,
 
         oraAttuale: new Date().getHours() + '.' + new Date().getMinutes(),
 
@@ -24,16 +23,19 @@ const app = new Vue({
                         testo: 'Hai portato a spasso il cane?',
                         ora: '15.30',
                         seiIlMittente: true,
+                        visibile: false,
                     },
                     {
                         testo: 'Ricordati di stendere i panni',
                         ora: '15.50',
                         seiIlMittente: true,
+                        visibile: false,
                     },
                     {
                         testo: 'Tutto fatto!',
                         ora: '16.15',
                         seiIlMittente: false,
+                        visibile: false,
                     },
                 ],
             },
@@ -47,16 +49,19 @@ const app = new Vue({
                         testo: 'ciao come stai?',
                         ora: '15.30',
                         seiIlMittente: true,
+                        visibile: false,
                     },
                     {
                         testo: 'io bene, tu che dici?',
                         ora: '15.50',
                         seiIlMittente: true,
+                        visibile: false,
                     },
                     {
                         testo: 'sto scrivendo codice, mi fuma il cervello!',
                         ora: '17.15',
                         seiIlMittente: false,
+                        visibile: false,
                     },
                 ],
             },
@@ -70,16 +75,19 @@ const app = new Vue({
                         testo: 'forza roma',
                         ora: '15.30',
                         seiIlMittente: true,
+                        visibile: false,
                     },
                     {
                         testo: 'forza roma',
                         ora: '15.50',
                         seiIlMittente: true,
+                        visibile: false,
                     },
                     {
                         testo: 'sempre!',
                         ora: '16.30',
                         seiIlMittente: false,
+                        visibile: false,
                     },
                 ],
             },
@@ -93,16 +101,19 @@ const app = new Vue({
                         testo: 'Hai studiato?',
                         ora: '15.30',
                         seiIlMittente: true,
+                        visibile: false,
                     },
                     {
                         testo: 'lo hai fatto per bene?',
                         ora: '15.50',
                         seiIlMittente: true,
+                        visibile: false,
                     },
                     {
                         testo: 'Tutto fatto!',
                         ora: '21.25',
                         seiIlMittente: false,
+                        visibile: false,
                     },
                 ],
             },
@@ -116,16 +127,19 @@ const app = new Vue({
                         testo: 'come va il corso?',
                         ora: '15.30',
                         seiIlMittente: true,
+                        visibile: false,
                     },
                     {
                         testo: 'sei bravo?',
                         ora: '15.50',
                         seiIlMittente: true,
+                        visibile: false,
                     },
                     {
                         testo: 'sono un mostro!',
                         ora: '16.40',
                         seiIlMittente: false,
+                        visibile: false,
                     },
                 ],
             },
@@ -139,16 +153,19 @@ const app = new Vue({
                         testo: 'usciamo insieme?',
                         ora: '15.30',
                         seiIlMittente: true,
+                        visibile: false,
                     },
                     {
                         testo: 'mi piaci',
                         ora: '15.50',
                         seiIlMittente: true,
+                        visibile: false,
                     },
                     {
                         testo: 'anche tu!',
                         ora: '18.15',
                         seiIlMittente: false,
+                        visibile: false,
                     },
                 ],
             },
@@ -162,16 +179,19 @@ const app = new Vue({
                         testo: 'domenica stadio?',
                         ora: '15.30',
                         seiIlMittente: true,
+                        visibile: false,
                     },
                     {
                         testo: 'offro io',
                         ora: '15.50',
                         seiIlMittente: true,
+                        visibile: false,
                     },
                     {
                         testo: 'daje!',
                         ora: '19.20',
                         seiIlMittente: false,
+                        visibile: false,
                     },
                 ],
             },
@@ -185,16 +205,19 @@ const app = new Vue({
                         testo: 'dopo palestra',
                         ora: '15.30',
                         seiIlMittente: true,
+                        visibile: false,
                     },
                     {
                         testo: 'Petto e bicipidi?',
                         ora: '15.50',
                         seiIlMittente: true,
+                        visibile: false,
                     },
                     {
                         testo: 'forza e coraggio',
                         ora: '20.12',
                         seiIlMittente: false,
+                        visibile: false,
                     },
                 ],
             },
@@ -211,6 +234,7 @@ const app = new Vue({
                     testo: this.nuovoMessaggio,
                     ora: new Date().getHours() + '.' + new Date().getMinutes(),
                     seiIlMittente: true,
+                    visibile: false,
                 });
                 this.nuovoMessaggio = '';
             }
@@ -225,6 +249,7 @@ const app = new Vue({
                     testo: 'ok',
                     ora: new Date().getHours() + '.' + new Date().getMinutes(),
                     seiIlMittente: false,
+                    visibile: false,
                 }
             )
         },
@@ -246,15 +271,13 @@ const app = new Vue({
             this.arrayContatti[this.chatAttiva].arrayMessaggiChat.splice(index, 1);
         },
 
-        funzioneVisibilita(index) {
-            console.log(index);
-            if (this.visibile == false) {
-                this.visibile = true;
+        funzioneVisibile(index) {
+            if (this.arrayContatti[this.chatAttiva].arrayMessaggiChat[index].visibile == false) {
+                this.arrayContatti[this.chatAttiva].arrayMessaggiChat[index].visibile = true;
             } else {
-                this.visibile = false;
+                this.arrayContatti[this.chatAttiva].arrayMessaggiChat[index].visibile = false;
             }
-        },
-
+        }
 
 
     },
