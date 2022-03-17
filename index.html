@@ -74,29 +74,9 @@
             </div>
 
             <!-- LISTA CHAT  -->
-            <ul v-if="ricerca == ''" class="lista-chat">
-                <li @click="funzioneChatAttiva(index)" v-for="(contatto, index) in arrayContatti"
-                    :class="(index == chatAttiva) ? 'active-chat' : '' ">
-                    <div class="div-flex">
-                        <div class="avatar-li">
-                            <img class="img-avatar" :src="'img/'+contatto.avatar" alt="avatae io">
-                        </div>
-
-
-                        <div class="nome">
-                            <h3>{{ contatto.nome }}</h3>
-                            <div>{{ contatto.arrayMessaggiChat[contatto.arrayMessaggiChat.length - 1].testo }}</div>
-                        </div>
-                    </div>
-
-
-                    <div class="ora">{{ contatto.arrayMessaggiChat[contatto.arrayMessaggiChat.length - 1].ora }}</div>
-                </li>
-            </ul>
-
-            <ul v-else class="lista-chat">
-                <li @click="funzioneChatAttiva(index)" v-for="(contatto, index) in arrayRicercati"
-                    :class="(index == chatAttiva) ? 'active-chat' : '' ">
+            <ul class="lista-chat">
+                <li v-show="contatto.visibile" @click="funzioneChatAttiva(index)"
+                    v-for="(contatto, index) in arrayContatti" :class="(index == chatAttiva) ? 'active-chat' : '' ">
                     <div class="div-flex">
                         <div class="avatar-li">
                             <img class="img-avatar" :src="'img/'+contatto.avatar" alt="avatae io">
@@ -134,10 +114,10 @@
             <div class="profilo">
                 <div class="profilo-left">
                     <div class="avatar">
-                        <img class="img-avatar" :src="'img/' + arrayRicercati[chatAttiva].avatar" alt="avatar 1">
+                        <img class="img-avatar" :src="'img/' + arrayContatti[chatAttiva].avatar" alt="avatar 1">
                     </div>
                     <div class="nome-profilo">
-                        <h3>{{ arrayRicercati[chatAttiva].nome }}</h3>
+                        <h3>{{ arrayContatti[chatAttiva].nome }}</h3>
                         <div>Ultimo accesso oggi alle {{ oraAttuale }}</div>
                     </div>
                 </div>
@@ -155,7 +135,7 @@
             <div class="corpo-chat">
 
                 <ul class="chat-list chat-destra">
-                    <li v-for="(messaggio,index) in arrayRicercati[chatAttiva].arrayMessaggiChat"
+                    <li v-for="(messaggio,index) in arrayContatti[chatAttiva].arrayMessaggiChat"
                         :class="(messaggio.seiIlMittente == true) ? 'mex-inviato' : 'mex-ricevuto'">
                         <div class="mex">
                             {{ messaggio.testo }}
