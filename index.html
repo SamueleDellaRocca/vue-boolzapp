@@ -134,10 +134,10 @@
             <div class="profilo">
                 <div class="profilo-left">
                     <div class="avatar">
-                        <img class="img-avatar" :src="'img/' + arrayContatti[chatAttiva].avatar" alt="avatar 1">
+                        <img class="img-avatar" :src="'img/' + arrayRicercati[chatAttiva].avatar" alt="avatar 1">
                     </div>
                     <div class="nome-profilo">
-                        <h3>{{ arrayContatti[chatAttiva].nome }}</h3>
+                        <h3>{{ arrayRicercati[chatAttiva].nome }}</h3>
                         <div>Ultimo accesso oggi alle {{ oraAttuale }}</div>
                     </div>
                 </div>
@@ -155,7 +155,7 @@
             <div class="corpo-chat">
 
                 <ul class="chat-list chat-destra">
-                    <li v-for="(messaggio,index) in arrayContatti[chatAttiva].arrayMessaggiChat"
+                    <li v-for="(messaggio,index) in arrayRicercati[chatAttiva].arrayMessaggiChat"
                         :class="(messaggio.seiIlMittente == true) ? 'mex-inviato' : 'mex-ricevuto'">
                         <div class="mex">
                             {{ messaggio.testo }}
