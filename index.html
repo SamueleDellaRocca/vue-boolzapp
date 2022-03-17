@@ -161,6 +161,10 @@
                             {{ messaggio.testo }}
                         </div>
                         <div class="ora-mex">{{ messaggio.ora }}</div>
+                        <button @click="funzioneVisibilita(index)" class="freccia"><i
+                                class="fa-solid fa-angle-down"></i></button>
+                        <div @click="funzioneCancellaMessaggio(index)" :class="(visibile == false) ? 'visibility' : '' "
+                            class="erase">cancella messaggio</div>
                     </li>
                 </ul>
 

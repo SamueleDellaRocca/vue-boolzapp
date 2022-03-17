@@ -3,6 +3,7 @@ const app = new Vue({
     el: '#container',
 
     data: {
+        visibile: false,
 
         oraAttuale: new Date().getHours() + '.' + new Date().getMinutes(),
 
@@ -239,8 +240,22 @@ const app = new Vue({
                     this.arrayRicercati.push(this.arrayContatti[index]);
                 };
             };
-            console.log(this.arrayRicercati);
-        }
+        },
+
+        funzioneCancellaMessaggio(index) {
+            this.arrayContatti[this.chatAttiva].arrayMessaggiChat.splice(index, 1);
+        },
+
+        funzioneVisibilita(index) {
+            console.log(index);
+            if (this.visibile == false) {
+                this.visibile = true;
+            } else {
+                this.visibile = false;
+            }
+        },
+
+
 
     },
 

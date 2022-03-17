@@ -280,6 +280,35 @@ html {
     font-size: 0.8rem;
 }
 
+.freccia {
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.chat-destra li:hover .freccia {
+    visibility: visible;
+}
+
+.erase {
+    background-color: white;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 3;
+    right: 0px;
+    top: 30px;
+    cursor: pointer;
+}
+
+.visibility {
+    display: none;
+}
 
 
 
