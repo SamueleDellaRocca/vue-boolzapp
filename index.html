@@ -85,12 +85,14 @@
 
                         <div class="nome">
                             <h3>{{ contatto.nome }}</h3>
-                            <div>{{ contatto.arrayMessaggiChat[contatto.arrayMessaggiChat.length - 1].testo }}</div>
+                            <div v-if="contatto.arrayMessaggiChat.length != 0">{{
+                                contatto.arrayMessaggiChat[contatto.arrayMessaggiChat.length - 1].testo }}</div>
                         </div>
                     </div>
 
 
-                    <div class="ora">{{ contatto.arrayMessaggiChat[contatto.arrayMessaggiChat.length - 1].ora }}</div>
+                    <div v-if="contatto.arrayMessaggiChat.length != 0" class="ora">{{
+                        contatto.arrayMessaggiChat[contatto.arrayMessaggiChat.length - 1].ora }}</div>
                 </li>
             </ul>
 
