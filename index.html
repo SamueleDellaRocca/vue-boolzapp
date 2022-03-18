@@ -169,7 +169,8 @@
                         name="messaggio" id="messaggio" placeholder="Scrivi un messaggio">
 
                     <button class="btn-chat">
-                        <i class="fa-solid fa-microphone"></i>
+                        <i v-if="nuovoMessaggio.length == 0" class="fa-solid fa-microphone"></i>
+                        <i v-else @click="funzioneInviaMessaggio" class="fa-solid fa-paper-plane"></i>
                     </button>
                 </div>
 
