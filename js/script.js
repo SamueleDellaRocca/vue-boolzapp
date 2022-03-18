@@ -298,6 +298,11 @@ const app = new Vue({
             this.visibilita = false;
         },
 
+        funzioneEliminaContatti() {
+            this.arrayContatti.splice(this.chatAttiva)
+            this.visibilita = false;
+        },
+
         funzioneVisibile(index) {
             if (this.arrayContatti[this.chatAttiva].arrayMessaggiChat[index].visibile == false) {
                 this.arrayContatti[this.chatAttiva].arrayMessaggiChat[index].visibile = true;
