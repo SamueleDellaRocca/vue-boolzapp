@@ -93,6 +93,7 @@ html {
     justify-content: space-between;
     align-items: center;
     background-color: hsl(0deg 0% 92%);
+    height: 54px;
 }
 
 .profilo-left {
@@ -244,13 +245,21 @@ html {
 .cancella-messaggi {
     z-index: 3;
     background-color: white;
-    padding: 7px;
     border: 1px solid black;
     border-radius: 5px;
     position: absolute;
     right: 0px;
     top: 43px;
     cursor: pointer;
+}
+
+.elimina-messaggi {
+    border-bottom: 1px solid black;
+    padding: 7px;
+}
+
+.elimina-contatto {
+    padding: 7px;
 }
 
 .nome-profilo div {
@@ -369,4 +378,9 @@ html {
     border: none;
     background-color: transparent;
     color: gray;
+}
+
+.contatti-assenti {
+    text-align: center;
+    font-size: 2rem;
 }

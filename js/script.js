@@ -237,16 +237,22 @@ const app = new Vue({
     methods: {
 
         funzioneInviaMessaggio() {
-            if (this.nuovoMessaggio.trim() != '') {
-                this.arrayContatti[this.chatAttiva].arrayMessaggiChat.push({
-                    testo: this.nuovoMessaggio,
-                    ora: new Date().getHours() + '.' + new Date().getMinutes(),
-                    seiIlMittente: true,
-                    visibile: false,
-                });
-                this.nuovoMessaggio = '';
+            if (this.arrayContatti.length !== 0) {
+
+                if (this.nuovoMessaggio.trim() != '') {
+                    this.arrayContatti[this.chatAttiva].arrayMessaggiChat.push({
+                        testo: this.nuovoMessaggio,
+                        ora: new Date().getHours() + '.' + new Date().getMinutes(),
+                        seiIlMittente: true,
+                        visibile: false,
+                    });
+                    this.nuovoMessaggio = '';
+                }
+                setTimeout(this.funzioneRisposta, 1000);
+
+            } else {
+                this.nuovoMessaggio = "Non puoi inviare messaggi, se l'elenco contatti è vuoto"
             }
-            setTimeout(this.funzioneRisposta, 1000);
         },
 
         funzioneRisposta() {
@@ -285,6 +291,11 @@ const app = new Vue({
             if (this.arrayContatti[this.chatAttiva].arrayMessaggiChat.length == 0) {
                 this.visibilita = false;
             }
+        },
+
+        funzioneEliminaContatto() {
+            this.arrayContatti.splice(this.chatAttiva, 1)
+            this.visibilita = false;
         },
 
         funzioneVisibile(index) {

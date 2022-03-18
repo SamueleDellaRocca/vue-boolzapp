@@ -79,7 +79,7 @@
                 </div>
 
                 <!-- LISTA CHAT  -->
-                <ul class="lista-chat">
+                <ul v-if="arrayContatti.length !== 0" class="lista-chat">
                     <li v-show="contatto.visibile" @click="funzioneChatAttiva(index)"
                         v-for="(contatto, index) in arrayContatti" :class="(index == chatAttiva) ? 'active-chat' : '' ">
                         <div class="div-flex">
@@ -101,6 +101,8 @@
                     </li>
                 </ul>
 
+                <div class="contatti-assenti" v-else>Non ci sono contatti nell'elenco</div>
+
 
             </div>
             <!-- FINE PARTE SINISTRA  -->
@@ -113,7 +115,7 @@
             <!-- PARTE DESTRA, CHAT  -->
             <div class="destra">
 
-                <div class="profilo">
+                <div v-if="arrayContatti.length !== 0" class="profilo">
                     <div class="profilo-left">
                         <div class="avatar">
                             <img class="img-avatar" :src="'img/' + arrayContatti[chatAttiva].avatar" alt="avatar 1">
@@ -129,16 +131,18 @@
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <i class="fa-solid fa-paperclip"></i>
                         <i @click="funzioneRendiVisibile" class="fa-solid fa-ellipsis-vertical"></i>
-                        <div v-show="visibilita" @click="funzioneCancellaConversazione" class="cancella-messaggi">
-                            Cancella tutti i messaggi
+                        <div v-show="visibilita" class="cancella-messaggi">
+                            <div @click="funzioneCancellaConversazione" class="elimina-messaggi">Cancella tutti i
+                                messaggi</div>
+                            <div @click="funzioneEliminaContatto" class="elimina-contatto">Elimina contatto</div>
                         </div>
                     </div>
                 </div>
+                <div class="profilo contatti-assenti" v-else>Non ci sono contatti nell'elenco</div>
 
 
 
-                <div class="corpo-chat">
-
+                <div v-if="arrayContatti.length !== 0" class="corpo-chat">
                     <ul class="chat-list chat-destra">
                         <li v-for="(messaggio,index) in arrayContatti[chatAttiva].arrayMessaggiChat"
                             :class="(messaggio.seiIlMittente == true) ? 'mex-inviato' : 'mex-ricevuto'">
@@ -152,8 +156,8 @@
                                 cancella messaggio</div>
                         </li>
                     </ul>
-
                 </div>
+                <div class="corpo-chat" v-else></div>
 
 
                 <div class="spazio-messaggi">
