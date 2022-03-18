@@ -8,6 +8,7 @@ const app = new Vue({
         nuovoMessaggio: '',
         chatAttiva: 0,
         ricerca: '',
+        visibilita: false,
 
 
         arrayContatti: [
@@ -278,12 +279,23 @@ const app = new Vue({
             this.arrayContatti[this.chatAttiva].arrayMessaggiChat.splice(index, 1);
         },
 
+        funzioneCancellaConversazione() {
+            this.arrayContatti[this.chatAttiva].arrayMessaggiChat.splice(0, this.arrayContatti[this.chatAttiva].arrayMessaggiChat.length);
+            if (this.arrayContatti[this.chatAttiva].arrayMessaggiChat.length == 0) {
+                this.visibilita = false;
+            }
+        },
+
         funzioneVisibile(index) {
             if (this.arrayContatti[this.chatAttiva].arrayMessaggiChat[index].visibile == false) {
                 this.arrayContatti[this.chatAttiva].arrayMessaggiChat[index].visibile = true;
             } else {
                 this.arrayContatti[this.chatAttiva].arrayMessaggiChat[index].visibile = false;
             }
+        },
+
+        funzioneRendiVisibile() {
+            this.visibilita = true;
         }
 
 
