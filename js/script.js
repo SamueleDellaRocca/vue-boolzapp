@@ -296,7 +296,11 @@ const app = new Vue({
         },
 
         funzioneRendiVisibile() {
-            this.visibilita = true;
+            if (this.visibilita) {
+                this.visibilita = false;
+            } else {
+                this.visibilita = true;
+            }
         },
 
     },
