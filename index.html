@@ -19,162 +19,162 @@
 </head>
 
 <body>
+    <div id="container-main">
 
-    <div class="verde"></div>
-    <div class="gray"></div>
-
-    <div id="container">
+        <div class="verde"></div>
+        <div class="gray"></div>
 
         <div v-show="anteprimaVisibile" class="anteprima">
             <h1 class="titolo">Boolzapp made by Booleaner</h1>
         </div>
 
-        <!-- PARTE SINISTRA, CON LISTA CONTATTI  -->
-        <div class="sinistra">
 
-            <div class="profilo">
-                <div class="profilo-left">
-                    <div class="avatar">
-                        <img class="img-avatar" src="img/avatar_io.jpg" alt="avatar io">
+        <div id="container">
+            <!-- PARTE SINISTRA, CON LISTA CONTATTI  -->
+            <div class="sinistra">
+
+                <div class="profilo">
+                    <div class="profilo-left">
+                        <div class="avatar">
+                            <img class="img-avatar" src="img/avatar_io.jpg" alt="avatar io">
+                        </div>
+                        <h3>Sofia</h3>
                     </div>
-                    <h3>Sofia</h3>
+
+
+                    <div class="profilo-right">
+                        <i class="fa-solid fa-circle-notch"></i>
+                        <i class="fa-solid fa-message"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
                 </div>
 
 
-                <div class="profilo-right">
-                    <i class="fa-solid fa-circle-notch"></i>
-                    <i class="fa-solid fa-message"></i>
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                </div>
-            </div>
 
 
 
 
+                <div class="notifiche">
+                    <div class="bell">
+                        <i class="fa-solid fa-bell-slash"></i>
+                    </div>
 
-
-            <div class="notifiche">
-                <div class="bell">
-                    <i class="fa-solid fa-bell-slash"></i>
+                    <div class="notifiche-right">
+                        <h4>Ricevi notifiche di nuovi messaggi</h4>
+                        <a href="" class="link-css">Attiva notifiche desktop</a>
+                    </div>
                 </div>
 
-                <div class="notifiche-right">
-                    <h4>Ricevi notifiche di nuovi messaggi</h4>
-                    <a href="" class="link-css">Attiva notifiche desktop</a>
+
+
+                <div class="ricerca">
+                    <div class="input">
+                        <button class="btn-lente">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+
+                        <input v-on:keyup="funzioneRicerca" v-model="ricerca" type="text" name="ricerca"
+                            id="input-ricerca" placeholder="Cerca o inizia una nuova chat">
+                    </div>
                 </div>
-            </div>
+
+                <!-- LISTA CHAT  -->
+                <ul class="lista-chat">
+                    <li v-show="contatto.visibile" @click="funzioneChatAttiva(index)"
+                        v-for="(contatto, index) in arrayContatti" :class="(index == chatAttiva) ? 'active-chat' : '' ">
+                        <div class="div-flex">
+                            <div class="avatar-li">
+                                <img class="img-avatar" :src="'img/'+contatto.avatar" alt="avatae io">
+                            </div>
 
 
-
-            <div class="ricerca">
-                <div class="input">
-                    <button class="btn-lente">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
-
-                    <input v-on:keyup="funzioneRicerca" v-model="ricerca" type="text" name="ricerca" id="input-ricerca"
-                        placeholder="Cerca o inizia una nuova chat">
-                </div>
-            </div>
-
-            <!-- LISTA CHAT  -->
-            <ul class="lista-chat">
-                <li v-show="contatto.visibile" @click="funzioneChatAttiva(index)"
-                    v-for="(contatto, index) in arrayContatti" :class="(index == chatAttiva) ? 'active-chat' : '' ">
-                    <div class="div-flex">
-                        <div class="avatar-li">
-                            <img class="img-avatar" :src="'img/'+contatto.avatar" alt="avatae io">
+                            <div class="nome">
+                                <h3>{{ contatto.nome }}</h3>
+                                <div v-if="contatto.arrayMessaggiChat.length != 0">{{
+                                    contatto.arrayMessaggiChat[contatto.arrayMessaggiChat.length - 1].testo }}</div>
+                            </div>
                         </div>
 
 
-                        <div class="nome">
-                            <h3>{{ contatto.nome }}</h3>
-                            <div v-if="contatto.arrayMessaggiChat.length != 0">{{
-                                contatto.arrayMessaggiChat[contatto.arrayMessaggiChat.length - 1].testo }}</div>
-                        </div>
-                    </div>
-
-
-                    <div v-if="contatto.arrayMessaggiChat.length != 0" class="ora">{{
-                        contatto.arrayMessaggiChat[contatto.arrayMessaggiChat.length - 1].ora }}</div>
-                </li>
-            </ul>
-
-
-        </div>
-        <!-- FINE PARTE SINISTRA  -->
-
-
-
-
-
-
-        <!-- PARTE DESTRA, CHAT  -->
-        <div class="destra">
-
-            <div class="profilo">
-                <div class="profilo-left">
-                    <div class="avatar">
-                        <img class="img-avatar" :src="'img/' + arrayContatti[chatAttiva].avatar" alt="avatar 1">
-                    </div>
-                    <div class="nome-profilo">
-                        <h3>{{ arrayContatti[chatAttiva].nome }}</h3>
-                        <div>Ultimo accesso oggi alle {{ oraAttuale }}</div>
-                    </div>
-                </div>
-
-
-                <div class="profilo-right">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <i class="fa-solid fa-paperclip"></i>
-                    <i @click="funzioneRendiVisibile" class="fa-solid fa-ellipsis-vertical"></i>
-                    <div v-show="visibilita" @click="funzioneCancellaConversazione" class="cancella-messaggi">
-                        Cancella tutti i messaggi
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div class="corpo-chat">
-
-                <ul class="chat-list chat-destra">
-                    <li v-for="(messaggio,index) in arrayContatti[chatAttiva].arrayMessaggiChat"
-                        :class="(messaggio.seiIlMittente == true) ? 'mex-inviato' : 'mex-ricevuto'">
-                        <div class="mex">
-                            {{ messaggio.testo }}
-                        </div>
-                        <div class="ora-mex">{{ messaggio.ora }}</div>
-                        <button @click="funzioneVisibile(index)" class="freccia"><i
-                                class="fa-solid fa-angle-down"></i></button>
-                        <div v-show="messaggio.visibile" @click="funzioneCancellaMessaggio(index)" class="erase">
-                            cancella messaggio</div>
+                        <div v-if="contatto.arrayMessaggiChat.length != 0" class="ora">{{
+                            contatto.arrayMessaggiChat[contatto.arrayMessaggiChat.length - 1].ora }}</div>
                     </li>
                 </ul>
 
+
             </div>
+            <!-- FINE PARTE SINISTRA  -->
 
 
-            <div class="spazio-messaggi">
-                <button class="btn-chat">
-                    <i class="fa-regular fa-face-smile"></i>
-                </button>
 
-                <input v-on:keyup.enter="funzioneInviaMessaggio" v-model="nuovoMessaggio" type="text" name="messaggio"
-                    id="messaggio" placeholder="Scrivi un messaggio">
 
-                <button class="btn-chat">
-                    <i class="fa-solid fa-microphone"></i>
-                </button>
+
+
+            <!-- PARTE DESTRA, CHAT  -->
+            <div class="destra">
+
+                <div class="profilo">
+                    <div class="profilo-left">
+                        <div class="avatar">
+                            <img class="img-avatar" :src="'img/' + arrayContatti[chatAttiva].avatar" alt="avatar 1">
+                        </div>
+                        <div class="nome-profilo">
+                            <h3>{{ arrayContatti[chatAttiva].nome }}</h3>
+                            <div>Ultimo accesso oggi alle {{ oraAttuale }}</div>
+                        </div>
+                    </div>
+
+
+                    <div class="profilo-right">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-paperclip"></i>
+                        <i @click="funzioneRendiVisibile" class="fa-solid fa-ellipsis-vertical"></i>
+                        <div v-show="visibilita" @click="funzioneCancellaConversazione" class="cancella-messaggi">
+                            Cancella tutti i messaggi
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="corpo-chat">
+
+                    <ul class="chat-list chat-destra">
+                        <li v-for="(messaggio,index) in arrayContatti[chatAttiva].arrayMessaggiChat"
+                            :class="(messaggio.seiIlMittente == true) ? 'mex-inviato' : 'mex-ricevuto'">
+                            <div class="mex">
+                                {{ messaggio.testo }}
+                            </div>
+                            <div class="ora-mex">{{ messaggio.ora }}</div>
+                            <button @click="funzioneVisibile(index)" class="freccia"><i
+                                    class="fa-solid fa-angle-down"></i></button>
+                            <div v-show="messaggio.visibile" @click="funzioneCancellaMessaggio(index)" class="erase">
+                                cancella messaggio</div>
+                        </li>
+                    </ul>
+
+                </div>
+
+
+                <div class="spazio-messaggi">
+                    <button class="btn-chat">
+                        <i class="fa-regular fa-face-smile"></i>
+                    </button>
+
+                    <input v-on:keyup.enter="funzioneInviaMessaggio" v-model="nuovoMessaggio" type="text"
+                        name="messaggio" id="messaggio" placeholder="Scrivi un messaggio">
+
+                    <button class="btn-chat">
+                        <i class="fa-solid fa-microphone"></i>
+                    </button>
+                </div>
+
+
+
             </div>
-
-
+            <!-- FINE PARTE DESTRA  -->
 
         </div>
-        <!-- FINE PARTE DESTRA  -->
-
-
-
 
     </div>
 

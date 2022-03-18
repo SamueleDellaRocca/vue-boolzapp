@@ -1,6 +1,6 @@
 const app = new Vue({
 
-    el: '#container',
+    el: '#container-main',
 
     data: {
 
