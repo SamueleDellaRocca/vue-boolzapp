@@ -9,6 +9,7 @@ const app = new Vue({
         chatAttiva: 0,
         ricerca: '',
         visibilita: false,
+        anteprimaVisibile: true,
 
 
         arrayContatti: [
@@ -296,9 +297,15 @@ const app = new Vue({
 
         funzioneRendiVisibile() {
             this.visibilita = true;
-        }
-
+        },
 
     },
+
+    mounted: function () {
+        setTimeout(() => {
+            this.anteprimaVisibile = false;
+        }, 3000);
+    },
+
 
 });
